@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- PROJECT METADATA -->
+    <groupId>com.lyndir.lhunath</groupId>
+    <artifactId>lyndir</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>Lyndir Group</name>
+    <description>
+        Group of Lyndir Projects
+    </description>
+
+
+    <!-- ORGANIZATION METADATA -->
+    <organization>
+        <name>Lhunath</name>
+        <url>http://lhunath.lyndir.com</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+
+    <!-- DEFAULT PROPERTIES -->
+    <properties>
+        <version.bouncycastle>141</version.bouncycastle>
+        <version.httpclient>3.1-rc1</version.httpclient>
+        <version.jlibdiff>1.01</version.jlibdiff>
+        <version.jtidy>r8-20060801</version.jtidy>
+        <version.xom>1.2</version.xom>
+        <version.xpp3>1.1.4c</version.xpp3>
+        <version.xstream>1.3.1</version.xstream>
+        <version.looks>2.2.0</version.looks>
+        <version.forms>1.2.1</version.forms>
+        <version.timingframework>1.0</version.timingframework>
+        <version.animatedtransitions>0.11</version.animatedtransitions>
+        <version.junit>4.5</version.junit>
+        <version.wicket>1.4-rc4</version.wicket>
+        <version.jetty>6.1.4</version.jetty>
+        <version.slf4j>1.5.8</version.slf4j>
+        <version.logback>0.9.15</version.logback>
+        <version.javaee>5.0-1</version.javaee>
+        <version.servlet-api>2.4</version.servlet-api>
+        <version.joda-time>1.6</version.joda-time>
+        <version.json-lib>2.2.3</version.json-lib>
+        <version.persistence-api>1.0</version.persistence-api>
+
+        <version.maven-assembly-plugin>2.2-beta-3</version.maven-assembly-plugin>
+        <version.maven-jar-plugin>2.2</version.maven-jar-plugin>
+        <version.maven-war-plugin>2.1-beta-1</version.maven-war-plugin>
+        <version.maven-ear-plugin>2.3.2</version.maven-ear-plugin>
+        <version.maven-datanucleus-plugin>1.1.4</version.maven-datanucleus-plugin>
+    </properties>
+
+
+    <!-- ALL MODULES THAT ARE ENABLED BY DEFAULT -->
+    <modules>
+        <module>jlibs</module>
+        <module>ipos-notifier</module>
+    </modules>
+
+
+    <!-- PROFILES THAT MODIFY DEFAULTS -->
+    <profiles>
+        <profile>
+            <id>mod:gorillas</id>
+            <modules>
+                <module>Gorillas.web</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>mod:deblock</id>
+            <modules>
+                <module>Deblock.web</module>
+            </modules>
+        </profile>
+    </profiles>
+
+    <!-- VERSION MANAGEMENT OF DEPENDENCIES -->
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- CRYPTO -->
+            <dependency>
+                <groupId>bouncycastle</groupId>
+                <artifactId>bcpg-jdk15</artifactId>
+                <version>${version.bouncycastle}</version>
+            </dependency>
+            <dependency>
+                <groupId>bouncycastle</groupId>
+                <artifactId>bcprov-jdk15</artifactId>
+                <version>${version.bouncycastle}</version>
+            </dependency>
+
+            <!-- NETWORK -->
+            <dependency>
+                <groupId>commons-httpclient</groupId>
+                <artifactId>commons-httpclient</artifactId>
+                <version>${version.httpclient}</version>
+            </dependency>
+
+            <!-- PARSING -->
+            <dependency>
+                <groupId>jlibdiff</groupId>
+                <artifactId>jlibdiff</artifactId>
+                <version>${version.jlibdiff}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>jtidy</artifactId>
+                <version>${version.jtidy}</version>
+            </dependency>
+            <dependency>
+                <groupId>xom</groupId>
+                <artifactId>xom</artifactId>
+                <version>${version.xom}</version>
+            </dependency>
+            <dependency>
+                <groupId>xpp3</groupId>
+                <artifactId>xpp3</artifactId>
+                <version>${version.xpp3}</version>
+            </dependency>
+            <dependency>
+                <groupId>xpp3</groupId>
+                <artifactId>xpp3_min</artifactId>
+                <version>${version.xpp3}</version>
+            </dependency>
+            <dependency>
+                <groupId>xpp3</groupId>
+                <artifactId>xpp3_xpath</artifactId>
+                <version>${version.xpp3}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <version>${version.xstream}</version>
+            </dependency>
+			<dependency>
+				<groupId>net.sf.json-lib</groupId>
+				<artifactId>json-lib</artifactId>
+				<classifier>jdk15</classifier>
+				<version>${version.json-lib}</version>
+			</dependency>
+
+            <!-- TESTING -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${version.junit}</version>
+            </dependency>
+
+            <!-- TIME -->
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${version.joda-time}</version>
+            </dependency>
+
+            <!-- USER INTERFACE -->
+            <dependency>
+                <groupId>com.jgoodies</groupId>
+                <artifactId>looks</artifactId>
+                <version>${version.looks}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jgoodies</groupId>
+                <artifactId>forms</artifactId>
+                <version>${version.forms}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.java.dev.timingframework</groupId>
+                <artifactId>timingframework</artifactId>
+                <version>${version.timingframework}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.java.dev.animatedtransitions</groupId>
+                <artifactId>animatedtransitions</artifactId>
+                <version>${version.animatedtransitions}</version>
+            </dependency>
+
+            <!-- WEB FRAMEWORK -->
+            <dependency>
+                <groupId>org.apache.openejb</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>${version.javaee}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.wicket</groupId>
+                <artifactId>wicket</artifactId>
+                <version>${version.wicket}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.wicket</groupId>
+                <artifactId>wicket-extensions</artifactId>
+                <version>${version.wicket}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.wicket</groupId>
+                <artifactId>wicket-ioc</artifactId>
+                <version>${version.wicket}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>${version.servlet-api}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty</artifactId>
+                <version>${version.jetty}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-util</artifactId>
+                <version>${version.jetty}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-management</artifactId>
+                <version>${version.jetty}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${version.logback}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-jdk14</artifactId>
+                <version>${version.slf4j}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${version.slf4j}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${version.slf4j}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>log4j-over-slf4j</artifactId>
+                <version>${version.slf4j}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${version.slf4j}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-jcl</artifactId>
+                <version>${version.slf4j}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${version.slf4j}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>persistence-api</artifactId>
+                <version>${version.persistence-api}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.appengine.orm</groupId>
+                <artifactId>datanucleus-appengine</artifactId>
+                <version>1.0.3</version>
+            </dependency>
+            <dependency>
+                <groupId>org.datanucleus</groupId>
+                <artifactId>datanucleus-jpa</artifactId>
+                <version>1.1.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.geronimo.specs</groupId>
+                <artifactId>geronimo-jpa_3.0_spec</artifactId>
+                <version>1.1.1</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <!-- DEFAULT BUILD CONFIGURATION -->
+    <build>
+
+        <!-- RESOURCE FILTERING -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**/*</include>
+                    <include>**/*.bmp</include>
+                    <include>**/*.jpg</include>
+                    <include>**/*.jpeg</include>
+                    <include>**/*.gif</include>
+                    <include>**/*.png</include>
+                    <include>**/*.crt</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>**/*.bmp</exclude>
+                    <exclude>**/*.jpg</exclude>
+                    <exclude>**/*.jpeg</exclude>
+                    <exclude>**/*.gif</exclude>
+                    <exclude>**/*.png</exclude>
+                    <exclude>**/*.crt</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**/*</include>
+                    <include>**/*.bmp</include>
+                    <include>**/*.jpg</include>
+                    <include>**/*.jpeg</include>
+                    <include>**/*.gif</include>
+                    <include>**/*.png</include>
+                    <include>**/*.crt</include>
+                </includes>
+            </testResource>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>**/*.bmp</exclude>
+                    <exclude>**/*.jpg</exclude>
+                    <exclude>**/*.jpeg</exclude>
+                    <exclude>**/*.gif</exclude>
+                    <exclude>**/*.png</exclude>
+                    <exclude>**/*.crt</exclude>
+                </excludes>
+            </testResource>
+        </testResources>
+
+        <!-- PLUGINS -->
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${version.maven-assembly-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${version.maven-jar-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${version.maven-war-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-ear-plugin</artifactId>
+                    <version>${version.maven-ear-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.datanucleus</groupId>
+                    <artifactId>maven-datanucleus-plugin</artifactId>
+                    <version>${version.maven-datanucleus-plugin}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.datanucleus</groupId>
+                            <artifactId>datanucleus-core</artifactId>
+                            <version>1.1.5</version>
+                        </dependency>
+                    </dependencies>
+                    <!--exclusions>
+                        <exclusion>
+                            <groupId>org.datanucleus</groupId>
+                            <artifactId>datanucleus-jpa</artifactId>
+                        </exclusion>
+                    </exclusions-->
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<configuration>
+					<ejbVersion>3.0</ejbVersion>
+					<generateClient>false</generateClient>
+				</configuration>
+			</plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <inherited>true</inherited>
+
+                <configuration>
+                    <fork>true</fork>
+                    <source>1.5</source>
+                    <target>1.5</target>
+
+                    <encoding>UTF8</encoding>
+                    <optimize>true</optimize>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+
+                    <meminitial>16m</meminitial>
+                    <maxmem>512m</maxmem>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-idea-plugin</artifactId>
+                <inherited>true</inherited>
+
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <inherited>true</inherited>
+
+                <configuration>
+                    <projectNameTemplate>[artifactId]</projectNameTemplate>
+                    <buildOutputDirectory>${basedir}/eclipse</buildOutputDirectory>
+
+                    <manifest>false</manifest>
+                    <wtpversion>2.0</wtpversion>
+                    <wtpmanifest>false</wtpmanifest>
+                    <wtpapplicationxml>false</wtpapplicationxml>
+
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>xml-maven-plugin</artifactId>
+
+                <configuration>
+                    <catalogs>
+                        <catalog>src/main/catalog/catalog.xml</catalog>
+                    </catalogs>
+                    <validationSets>
+                        <validationSet>
+                            <dir>.</dir>
+                            <includes>
+                                <include>target/**/*.xhtml</include>
+                                <include>target/**/*.html</include>
+                                <include>target/**/*.xml</include>
+                            </includes>
+                        </validationSet>
+                    </validationSets>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <!--goal>validate</goal-->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <!--
+                    Don't clean parent directory's target directory: it contains cache
+                    data such as eclipse:eclipse's downloadSources repository status.
+                -->
+                <inherited>false</inherited>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+
+    <!-- REMOTE ARTIFACT REPOSITORIES -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Maven Repository</name>
+            <url>http://repo1.maven.org/maven2</url>
+
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>ibiblio</id>
+            <name>IBibilio Repository</name>
+            <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
+
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>jboss</id>
+            <name>JBoss Repository</name>
+            <url>http://repository.jboss.org/maven2/</url>
+
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>datanucleus</id>
+            <name>DataNucleus Repository</name>
+            <url>http://www.datanucleus.org/downloads/maven2</url>
+
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>datanucleus_legacy</id>
+            <name>DataNucleus Legacy Repository</name>
+            <url>http://www.datanucleus.org/downloads/maven</url>
+            <layout>legacy</layout>
+
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>googlecode</id>
+            <name>Google Code Repository</name>
+            <url>http://google-maven-repository.googlecode.com/svn/repository</url>
+
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>java.net</id>
+            <name>Java.net Repository</name>
+            <url>http://download.java.net/maven/2/</url>
+
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>java.net_legacy</id>
+            <name>Java.net Legacy Repository</name>
+            <url>http://download.java.net/maven/1/</url>
+            <layout>legacy</layout>
+
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </repository>
+
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>datanucleus</id>
+            <url>http://www.datanucleus.org/downloads/maven2</url>
+
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

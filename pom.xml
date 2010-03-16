@@ -9,17 +9,27 @@
     <groupId>com.lyndir.lhunath</groupId>
     <artifactId>lyndir</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>Lyndir Group</name>
     <description>
         Group of Lyndir Projects
     </description>
 
 
+    <!-- CODE MANAGEMENT -->
+    <scm>
+        <url>http://codaset.com/lhunath/projects</url>
+    </scm>
+    <issueManagement>
+        <system>Codaset</system>
+        <url>http://codaset.com/lhunath/tickets</url>
+    </issueManagement>
+
+
     <!-- ORGANIZATION METADATA -->
     <organization>
         <name>Lhunath</name>
-        <url>http://lhunath.lyndir.com</url>
+        <url>http://www.lhunath.com</url>
     </organization>
     <licenses>
         <license>
@@ -30,10 +40,28 @@
     </licenses>
 
 
+    <!-- DISTRIBUTION AND DEPLOYMENT -->
+    <distributionManagement>
+        <repository>
+            <id>lyndir</id>
+            <url>scpexe://maven.lyndir.com/scm/maven2</url>
+        </repository>
+    </distributionManagement>
+
+
     <!-- DEFAULT PROPERTIES -->
     <properties>
+        <scm.git.pubbase>scm:git:git://codaset.com/lhunath</scm.git.pubbase>
+        <scm.git.devbase>scm:git:ssh://codaset.com/lhunath</scm.git.devbase>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <version.gson>1.4</version.gson>
+        <version.google-collections>1.0</version.google-collections>
+        <version.java-image-scaling>0.8.4</version.java-image-scaling>
         <version.bouncycastle>141</version.bouncycastle>
         <version.httpclient>3.1-rc1</version.httpclient>
+        <version.jets3t>0.7.2</version.jets3t>
         <version.jlibdiff>1.01</version.jlibdiff>
         <version.jtidy>r8-20060801</version.jtidy>
         <version.xom>1.2</version.xom>
@@ -44,8 +72,10 @@
         <version.timingframework>1.0</version.timingframework>
         <version.animatedtransitions>0.11</version.animatedtransitions>
         <version.junit>4.5</version.junit>
-        <version.wicket>1.4-rc4</version.wicket>
+        <version.wicket>1.4.7</version.wicket>
         <version.jetty>6.1.4</version.jetty>
+        <version.commons-logging>1.1</version.commons-logging>
+        <version.commons-logging-api>1.1</version.commons-logging-api>
         <version.slf4j>1.5.8</version.slf4j>
         <version.logback>0.9.15</version.logback>
         <version.javaee>5.0-1</version.javaee>
@@ -53,6 +83,8 @@
         <version.joda-time>1.6</version.joda-time>
         <version.json-lib>2.2.3</version.json-lib>
         <version.persistence-api>1.0</version.persistence-api>
+        <version.guice>2.0</version.guice>
+        <version.db4o>7.12-SNAPSHOT</version.db4o>
 
         <version.maven-assembly-plugin>2.2-beta-3</version.maven-assembly-plugin>
         <version.maven-jar-plugin>2.2</version.maven-jar-plugin>
@@ -64,6 +96,8 @@
 
     <!-- ALL MODULES THAT ARE ENABLED BY DEFAULT -->
     <modules>
+        <module>eclipse-config</module>
+
         <module>jlibs</module>
         <module>ipos-notifier</module>
     </modules>
@@ -74,13 +108,21 @@
         <profile>
             <id>mod:gorillas</id>
             <modules>
+                <module>apps</module>
                 <module>Gorillas.web</module>
             </modules>
         </profile>
         <profile>
             <id>mod:deblock</id>
             <modules>
+                <module>apps</module>
                 <module>Deblock.web</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>mod:snaplog</id>
+            <modules>
+                <module>snaplog</module>
             </modules>
         </profile>
     </profiles>
@@ -107,8 +149,30 @@
                 <artifactId>commons-httpclient</artifactId>
                 <version>${version.httpclient}</version>
             </dependency>
+            <dependency>
+                <groupId>net.java.dev.jets3t</groupId>
+                <artifactId>jets3t</artifactId>
+                <version>${version.jets3t}</version>
+            </dependency>
+
+            <!-- UTILITIES -->
+            <dependency>
+                <groupId>com.google.collections</groupId>
+                <artifactId>google-collections</artifactId>
+                <version>${version.google-collections}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mortennobel</groupId>
+                <artifactId>java-image-scaling</artifactId>
+                <version>${version.java-image-scaling}</version>
+            </dependency>
 
             <!-- PARSING -->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${version.gson}</version>
+            </dependency>
             <dependency>
                 <groupId>jlibdiff</groupId>
                 <artifactId>jlibdiff</artifactId>
@@ -144,12 +208,12 @@
                 <artifactId>xstream</artifactId>
                 <version>${version.xstream}</version>
             </dependency>
-			<dependency>
-				<groupId>net.sf.json-lib</groupId>
-				<artifactId>json-lib</artifactId>
-				<classifier>jdk15</classifier>
-				<version>${version.json-lib}</version>
-			</dependency>
+            <dependency>
+                <groupId>net.sf.json-lib</groupId>
+                <artifactId>json-lib</artifactId>
+                <classifier>jdk15</classifier>
+                <version>${version.json-lib}</version>
+            </dependency>
 
             <!-- TESTING -->
             <dependency>
@@ -210,6 +274,11 @@
                 <version>${version.wicket}</version>
             </dependency>
             <dependency>
+                <groupId>org.apache.wicket</groupId>
+                <artifactId>wicket-guice</artifactId>
+                <version>${version.wicket}</version>
+            </dependency>
+            <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>servlet-api</artifactId>
                 <version>${version.servlet-api}</version>
@@ -230,6 +299,15 @@
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-management</artifactId>
                 <version>${version.jetty}</version>
+                <scope>provided</scope>
+            </dependency>
+
+
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${version.commons-logging}</version>
+                <!-- Toss commons-logging out by default -->
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -278,6 +356,26 @@
                 <version>${version.persistence-api}</version>
             </dependency>
             <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-servlet</artifactId>
+                <version>${version.guice}</version>
+            </dependency>
+            <dependency>
+                <groupId>aopalliance</groupId>
+                <artifactId>aopalliance</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice-servlet</artifactId>
+                <version>${version.guice}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-assisted-inject</artifactId>
+                <version>${version.guice}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.google.appengine.orm</groupId>
                 <artifactId>datanucleus-appengine</artifactId>
                 <version>1.0.3</version>
@@ -292,6 +390,44 @@
                 <artifactId>geronimo-jpa_3.0_spec</artifactId>
                 <version>1.1.1</version>
             </dependency>
+            <dependency>
+                <groupId>com.db4o</groupId>
+                <artifactId>db4o-core-java5</artifactId>
+                <version>${version.db4o}</version>
+            </dependency>
+
+            <!-- Remove when datanucleus-appengine gets updated. -->
+            <dependency>
+                <groupId>com.google.appengine</groupId>
+                <artifactId>appengine-api-1.0-sdk</artifactId>
+                <version>1.3.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.datanucleus</groupId>
+                <artifactId>datanucleus-core</artifactId>
+                <version>1.1.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.datanucleus</groupId>
+                <artifactId>datanucleus-jpa</artifactId>
+                <version>1.1.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.geronimo.specs</groupId>
+                <artifactId>geronimo-jta_1.1_spec</artifactId>
+                <version>1.1.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.geronimo.specs</groupId>
+                <artifactId>geronimo-jpa_3.0_spec</artifactId>
+                <version>1.1.1</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.jdo</groupId>
+                <artifactId>jdo2-api</artifactId>
+                <version>2.3-eb</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
@@ -304,7 +440,7 @@
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
-                <filtering>false</filtering>
+                <!--filtering>false</filtering>
                 <includes>
                     <include>**/*</include>
                     <include>**/*.bmp</include>
@@ -325,7 +461,7 @@
                     <exclude>**/*.gif</exclude>
                     <exclude>**/*.png</exclude>
                     <exclude>**/*.crt</exclude>
-                </excludes>
+                </excludes-->
             </resource>
         </resources>
         <testResources>
@@ -401,14 +537,24 @@
         </pluginManagement>
         <plugins>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-ejb-plugin</artifactId>
-				<configuration>
-					<ejbVersion>3.0</ejbVersion>
-					<generateClient>false</generateClient>
-				</configuration>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>jks</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ejb-plugin</artifactId>
+                <configuration>
+                    <ejbVersion>3.0</ejbVersion>
+                    <generateClient>false</generateClient>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -417,10 +563,10 @@
 
                 <configuration>
                     <fork>true</fork>
-                    <source>1.5</source>
-                    <target>1.5</target>
+                    <source>1.6</source>
+                    <target>1.6</target>
 
-                    <encoding>UTF8</encoding>
+                    <encoding>UTF-8</encoding>
                     <optimize>true</optimize>
                     <showWarnings>true</showWarnings>
                     <showDeprecation>true</showDeprecation>
@@ -457,7 +603,34 @@
 
                     <downloadSources>true</downloadSources>
                     <downloadJavadocs>true</downloadJavadocs>
+
+                    <additionalConfig>
+                        <file>
+                            <name>.settings/org.eclipse.jdt.core.prefs</name>
+                            <location>org.eclipse.jdt.core.prefs</location>
+                        </file>
+                        <file>
+                            <name>.settings/org.eclipse.jdt.launching.prefs</name>
+                            <location>org.eclipse.jdt.launching.prefs</location>
+                        </file>
+                        <file>
+                            <name>.settings/org.eclipse.jdt.ui.prefs</name>
+                            <location>org.eclipse.jdt.ui.prefs</location>
+                        </file>
+                        <file>
+                            <name>.settings/org.eclipse.ltk.core.refactoring.prefs</name>
+                            <location>org.eclipse.ltk.core.refactoring.prefs</location>
+                        </file>
+                    </additionalConfig>
                 </configuration>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>com.lyndir.lhunath</groupId>
+                        <artifactId>eclipse-config</artifactId>
+                        <version>${pom.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <plugin>
@@ -583,6 +756,47 @@
             <id>googlecode</id>
             <name>Google Code Repository</name>
             <url>http://google-maven-repository.googlecode.com/svn/repository</url>
+
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>gson</id>
+            <url>http://google-gson.googlecode.com/svn/mavenrepo</url>
+
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>seasar</id>
+            <name>Seasar (For up-to-date GAE artifacts)</name>
+            <url>http://maven.seasar.org/maven2</url>
+
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>db4o</id>
+            <name>db4o Repository</name>
+            <url>https://source.db4o.com/maven/</url>
 
             <snapshots>
                 <enabled>true</enabled>

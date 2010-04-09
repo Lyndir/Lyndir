@@ -54,7 +54,7 @@
     <!-- DEFAULT PROPERTIES -->
     <properties>
         <scm.git.pubbase>scm:git:git://codaset.com/lhunath</scm.git.pubbase>
-        <scm.git.devbase>scm:git:ssh://codaset.com/lhunath</scm.git.devbase>
+        <scm.git.devbase>scm:git:ssh://git@codaset.com/lhunath</scm.git.devbase>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 

@@ -7,13 +7,13 @@
 	<parent>
         <groupId>com.lyndir.lhunath</groupId>
         <artifactId>lyndir</artifactId>
-        <version>1.1</version>
+        <version>1.1-SNAPSHOT</version>
 	</parent>
 
 	<groupId>com.lyndir.lhunath</groupId>
 	<artifactId>eclipse-config</artifactId>
 	<packaging>jar</packaging>
-	<version>1.1</version>
+	<version>1.1-SNAPSHOT</version>
 	<name>Lyndir Eclipse Config</name>
 	<description>
         Lyndir: Project-Specific Eclipse Configuration

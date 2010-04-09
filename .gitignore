@@ -1,2 +1,12 @@
+# Compiled objects.
+/*/target
+/target
+
+# OS-Specific junk.
 .DS_Store
+
+# Non-environment projects
 /*/
+
+# Environment projects
+!/eclipse-config/

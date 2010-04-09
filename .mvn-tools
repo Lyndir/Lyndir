@@ -3,7 +3,9 @@
 #
 # Configuration script
 #
-#   distribution        -- Specify the name/path of the distribution artifact that should be deployed remotely.
-#   remote=[user@]host  -- Specify the remote username and host to log into in order to deploy a distribution.
-#   remoteRepo          -- Specify the path on the remote that the local repository should be synchronized with.
+#   distribution=[artifactPath] -- Specify the name/path of the distribution artifact that should be deployed remotely.
+#   remote=[user@]host          -- Specify the remote username and host to log into in order to deploy a distribution.
+#   remoteRepo=[path]           -- Specify the path on the remote that the local repository should be synchronized with.
+#   releasePom=[01]             -- Specify whether a trimmed down release POM should be generated instead of using the project's POM for releases.
 
+releasePom=0

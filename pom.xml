@@ -9,20 +9,22 @@
     <groupId>com.lyndir.lhunath</groupId>
     <artifactId>lyndir</artifactId>
     <packaging>pom</packaging>
-    <version>1.1-SNAPSHOT</version>
+    <version>SNAPSHOT</version>
     <name>Lyndir Group</name>
     <description>
         Group of Lyndir Projects
     </description>
 
 
-    <!-- CODE MANAGEMENT -->
-    <scm>
+	<!-- CODE ACCESS -->
+	<scm>
         <url>http://codaset.com/lhunath/projects</url>
+        <connection>${scm.git.pubbase}/lyndir.git</connection>
+        <developerConnection>${scm.git.devbase}/lyndir.git</developerConnection>
     </scm>
     <issueManagement>
         <system>Codaset</system>
-        <url>http://codaset.com/lhunath/tickets</url>
+        <url>http://codaset.com/lhunath/lyndir/tickets</url>
     </issueManagement>
 
 
@@ -97,14 +99,17 @@
     <!-- ALL MODULES THAT ARE ENABLED BY DEFAULT -->
     <modules>
         <module>eclipse-config</module>
-
-        <module>jlibs</module>
-        <module>ipos-notifier</module>
     </modules>
 
 
     <!-- PROFILES THAT MODIFY DEFAULTS -->
     <profiles>
+        <profile>
+            <id>mod:jlibs</id>
+            <modules>
+                <module>jlibs</module>
+            </modules>
+        </profile>
         <profile>
             <id>mod:gorillas</id>
             <modules>
@@ -440,61 +445,24 @@
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
-                <!--filtering>false</filtering>
-                <includes>
-                    <include>**/*</include>
-                    <include>**/*.bmp</include>
-                    <include>**/*.jpg</include>
-                    <include>**/*.jpeg</include>
-                    <include>**/*.gif</include>
-                    <include>**/*.png</include>
-                    <include>**/*.crt</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
                 <filtering>true</filtering>
-                <excludes>
-                    <exclude>**/*.bmp</exclude>
-                    <exclude>**/*.jpg</exclude>
-                    <exclude>**/*.jpeg</exclude>
-                    <exclude>**/*.gif</exclude>
-                    <exclude>**/*.png</exclude>
-                    <exclude>**/*.crt</exclude>
-                </excludes-->
             </resource>
         </resources>
         <testResources>
             <testResource>
                 <directory>src/test/resources</directory>
-                <filtering>false</filtering>
-                <includes>
-                    <include>**/*</include>
-                    <include>**/*.bmp</include>
-                    <include>**/*.jpg</include>
-                    <include>**/*.jpeg</include>
-                    <include>**/*.gif</include>
-                    <include>**/*.png</include>
-                    <include>**/*.crt</include>
-                </includes>
-            </testResource>
-            <testResource>
-                <directory>src/test/resources</directory>
                 <filtering>true</filtering>
-                <excludes>
-                    <exclude>**/*.bmp</exclude>
-                    <exclude>**/*.jpg</exclude>
-                    <exclude>**/*.jpeg</exclude>
-                    <exclude>**/*.gif</exclude>
-                    <exclude>**/*.png</exclude>
-                    <exclude>**/*.crt</exclude>
-                </excludes>
             </testResource>
         </testResources>
 
         <!-- PLUGINS -->
         <pluginManagement>
             <plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.0</version>
+				</plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
@@ -536,13 +504,33 @@
             </plugins>
         </pluginManagement>
         <plugins>
-
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <developmentVersion>SNAPSHOT</developmentVersion>
+                    <localCheckout>true</localCheckout>
+                    <preparationGoals>clean install</preparationGoals>
+                    <goals>deploy</goals>
+                    <updateBranchVersions>true</updateBranchVersions>
+                    <updateWorkingCopyVersions>false</updateWorkingCopyVersions>
+                    <branchName>${project.version}-maint</branchName>
+                    <mavenExecutorId>forked-path</mavenExecutorId>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <configuration>
                     <nonFilteredFileExtensions>
-                        <nonFilteredFileExtension>jks</nonFilteredFileExtension>
+						<nonFilteredFileExtension>bmp</nonFilteredFileExtension>
+						<nonFilteredFileExtension>jpg</nonFilteredFileExtension>
+						<nonFilteredFileExtension>jpeg</nonFilteredFileExtension>
+						<nonFilteredFileExtension>gif</nonFilteredFileExtension>
+						<nonFilteredFileExtension>png</nonFilteredFileExtension>
+						<nonFilteredFileExtension>crt</nonFilteredFileExtension>
+						<nonFilteredFileExtension>jks</nonFilteredFileExtension>
                     </nonFilteredFileExtensions>
                 </configuration>
             </plugin>
@@ -594,7 +582,7 @@
 
                 <configuration>
                     <projectNameTemplate>[artifactId]</projectNameTemplate>
-                    <buildOutputDirectory>${basedir}/eclipse</buildOutputDirectory>
+                    <!--buildOutputDirectory>${basedir}/eclipse</buildOutputDirectory-->
 
                     <manifest>false</manifest>
                     <wtpversion>2.0</wtpversion>

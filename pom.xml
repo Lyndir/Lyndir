@@ -103,14 +103,9 @@
     <!-- PROFILES THAT MODIFY DEFAULTS -->
     <profiles>
         <profile>
-            <id>mod:jlibs</id>
-            <modules>
-                <module>jlibs</module>
-            </modules>
-        </profile>
-        <profile>
             <id>mod:gorillas</id>
             <modules>
+                <module>jlibs</module>
                 <module>apps</module>
                 <module>Gorillas.web</module>
             </modules>
@@ -118,6 +113,7 @@
         <profile>
             <id>mod:deblock</id>
             <modules>
+                <module>jlibs</module>
                 <module>apps</module>
                 <module>Deblock.web</module>
             </modules>
@@ -125,6 +121,7 @@
         <profile>
             <id>mod:snaplog</id>
             <modules>
+                <module>jlibs</module>
                 <module>snaplog</module>
             </modules>
         </profile>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <!-- PROJECT METADATA -->
@@ -14,8 +15,8 @@
     </description>
 
 
-	<!-- CODE ACCESS -->
-	<scm>
+    <!-- CODE ACCESS -->
+    <scm>
         <url>http://codaset.com/lhunath/projects</url>
         <connection>${scm.git.pubbase}/lyndir.git</connection>
         <developerConnection>${scm.git.devbase}/lyndir.git</developerConnection>
@@ -76,7 +77,7 @@
         <version.jetty>6.1.4</version.jetty>
         <version.commons-logging>1.1</version.commons-logging>
         <version.commons-logging-api>1.1</version.commons-logging-api>
-        <version.slf4j>1.5.8</version.slf4j>
+        <version.slf4j>1.5.11</version.slf4j>
         <version.logback>0.9.15</version.logback>
         <version.javaee>5.0-1</version.javaee>
         <version.servlet-api>2.4</version.servlet-api>
@@ -453,11 +454,11 @@
         <!-- PLUGINS -->
         <pluginManagement>
             <plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-release-plugin</artifactId>
-					<version>2.0</version>
-				</plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.0</version>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
@@ -499,7 +500,7 @@
             </plugins>
         </pluginManagement>
         <plugins>
-			<plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
@@ -519,13 +520,13 @@
                 <artifactId>maven-resources-plugin</artifactId>
                 <configuration>
                     <nonFilteredFileExtensions>
-						<nonFilteredFileExtension>bmp</nonFilteredFileExtension>
-						<nonFilteredFileExtension>jpg</nonFilteredFileExtension>
-						<nonFilteredFileExtension>jpeg</nonFilteredFileExtension>
-						<nonFilteredFileExtension>gif</nonFilteredFileExtension>
-						<nonFilteredFileExtension>png</nonFilteredFileExtension>
-						<nonFilteredFileExtension>crt</nonFilteredFileExtension>
-						<nonFilteredFileExtension>jks</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>bmp</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>jpg</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>jpeg</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>gif</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>png</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>crt</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>jks</nonFilteredFileExtension>
                     </nonFilteredFileExtensions>
                 </configuration>
             </plugin>

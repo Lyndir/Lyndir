@@ -52,13 +52,15 @@
 
     <!-- DEFAULT PROPERTIES -->
     <properties>
+        <release.version>1.2</release.version>
+
         <scm.git.pubbase>scm:git:git://codaset.com/lhunath</scm.git.pubbase>
         <scm.git.devbase>scm:git:ssh://git@codaset.com/lhunath</scm.git.devbase>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <version.gson>1.4</version.gson>
-        <version.google-collections>1.0</version.google-collections>
+        <version.guava>r03</version.guava>
         <version.java-image-scaling>0.8.4</version.java-image-scaling>
         <version.bouncycastle>141</version.bouncycastle>
         <version.httpclient>3.1-rc1</version.httpclient>
@@ -73,7 +75,9 @@
         <version.timingframework>1.0</version.timingframework>
         <version.animatedtransitions>0.11</version.animatedtransitions>
         <version.junit>4.5</version.junit>
+        <version.wicket>1.4.9</version.wicket>
         <version.wicket>1.4.7</version.wicket>
+        <version.quartz>1.8.0</version.quartz>
         <version.jetty>6.1.4</version.jetty>
         <version.commons-logging>1.1</version.commons-logging>
         <version.commons-logging-api>1.1</version.commons-logging-api>
@@ -85,7 +89,7 @@
         <version.json-lib>2.2.3</version.json-lib>
         <version.persistence-api>1.0</version.persistence-api>
         <version.guice>2.0</version.guice>
-        <version.db4o>7.12-SNAPSHOT</version.db4o>
+        <version.db4o>8.0-SNAPSHOT</version.db4o>
 
         <version.maven-assembly-plugin>2.2-beta-3</version.maven-assembly-plugin>
         <version.maven-jar-plugin>2.2</version.maven-jar-plugin>
@@ -126,6 +130,20 @@
                 <module>snaplog</module>
             </modules>
         </profile>
+        <profile>
+            <id>mod:homepage</id>
+            <modules>
+                <module>jlibs</module>
+                <module>homepage</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>mod:wish</id>
+            <modules>
+                <module>jlibs</module>
+                <module>wish</module>
+            </modules>
+        </profile>
     </profiles>
 
     <!-- VERSION MANAGEMENT OF DEPENDENCIES -->
@@ -158,9 +176,9 @@
 
             <!-- UTILITIES -->
             <dependency>
-                <groupId>com.google.collections</groupId>
-                <artifactId>google-collections</artifactId>
-                <version>${version.google-collections}</version>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${version.guava}</version>
             </dependency>
             <dependency>
                 <groupId>com.mortennobel</groupId>
@@ -228,6 +246,17 @@
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>${version.joda-time}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+                <version>${version.quartz}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <!-- USER INTERFACE -->
@@ -394,6 +423,11 @@
             <dependency>
                 <groupId>com.db4o</groupId>
                 <artifactId>db4o-core-java5</artifactId>
+                <version>${version.db4o}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.db4o</groupId>
+                <artifactId>db4o-nqopt-java5</artifactId>
                 <version>${version.db4o}</version>
             </dependency>
 

@@ -14,7 +14,6 @@
     <groupId>com.lyndir.lhunath</groupId>
     <artifactId>eclipse-config</artifactId>
     <packaging>jar</packaging>
-    <version>SNAPSHOT</version>
     <name>Lyndir Eclipse Config</name>
     <description>
         Lyndir: Project-Specific Eclipse Configuration

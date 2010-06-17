@@ -60,7 +60,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <version.gson>1.4</version.gson>
-        <version.guava>r03</version.guava>
+        <version.guava>r05</version.guava>
         <version.java-image-scaling>0.8.4</version.java-image-scaling>
         <version.bouncycastle>141</version.bouncycastle>
         <version.httpclient>3.1-rc1</version.httpclient>

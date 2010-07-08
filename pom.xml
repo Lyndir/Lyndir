@@ -131,6 +131,13 @@
             </modules>
         </profile>
         <profile>
+            <id>mod:taskdev</id>
+            <modules>
+                <module>jlibs</module>
+                <module>taskdev</module>
+            </modules>
+        </profile>
+        <profile>
             <id>mod:homepage</id>
             <modules>
                 <module>jlibs</module>

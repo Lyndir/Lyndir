@@ -16,9 +16,9 @@
 
     <!-- CODE ACCESS -->
     <scm>
-        <url>http://codaset.com/lhunath/projects</url>
-        <connection>${scm.git.pubbase}/lyndir.git</connection>
-        <developerConnection>${scm.git.devbase}/lyndir.git</developerConnection>
+        <url>${scm.codaset.webbase}/projects</url>
+        <connection>${scm.codaset.pubbase}/lyndir.git</connection>
+        <developerConnection>${scm.codaset.devbase}/lyndir.git</developerConnection>
     </scm>
     <issueManagement>
         <system>Codaset</system>

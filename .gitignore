@@ -10,3 +10,6 @@
 
 # Environment projects
 !/eclipse-config/
+!/.idea
+/.idea/*
+!/.idea/projectCodeStyle.xml

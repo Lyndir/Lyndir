@@ -107,6 +107,20 @@
     <!-- PROFILES THAT MODIFY DEFAULTS -->
     <profiles>
         <profile>
+            <id>mod:all</id>
+            <modules>
+                <module>jlibs</module>
+                <module>apps</module>
+                <module>Gorillas.web</module>
+                <module>Deblock.web</module>
+                <module>snaplog</module>
+                <module>taskdev</module>
+                <module>homepage</module>
+                <module>wish</module>
+                <module>ipos-notifier</module>
+            </modules>
+        </profile>
+        <profile>
             <id>mod:gorillas</id>
             <modules>
                 <module>jlibs</module>

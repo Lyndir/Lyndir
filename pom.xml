@@ -51,10 +51,15 @@
 
     <!-- DEFAULT PROPERTIES -->
     <properties>
-        <release.version>1.2</release.version>
+        <release.version>1.3</release.version>
 
-        <scm.git.pubbase>scm:git:git://codaset.com/lhunath</scm.git.pubbase>
-        <scm.git.devbase>scm:git:ssh://git@codaset.com/lhunath</scm.git.devbase>
+        <scm.github.webbase>http://github.com/Lamentum</scm.github.webbase>
+        <scm.github.pubbase>scm:git:git://github.com/Lamentum</scm.github.pubbase>
+        <scm.github.devbase>scm:git:ssh://git@github.com/Lamentum</scm.github.devbase>
+        <scm.codaset.webbase>http://codaset.com/lhunath</scm.codaset.webbase>
+        <scm.codaset.pubbase>scm:git:git://codaset.com/lhunath</scm.codaset.pubbase>
+        <scm.codaset.devbase>scm:git:ssh://git@codaset.com/lhunath</scm.codaset.devbase>
+
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 

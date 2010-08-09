@@ -44,7 +44,7 @@
     <distributionManagement>
         <repository>
             <id>lyndir</id>
-            <url>scpexe://maven.lyndir.com/scm/maven2</url>
+            <url>scpexe://maven.lyndir.com/usr/local/scm/maven2</url>
         </repository>
     </distributionManagement>
 

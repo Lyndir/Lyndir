@@ -78,9 +78,9 @@
         <version.forms>1.2.1</version.forms>
         <version.timingframework>1.0</version.timingframework>
         <version.animatedtransitions>0.11</version.animatedtransitions>
+        <version.jung>2.0.1</version.jung>
         <version.junit>4.5</version.junit>
-        <version.wicket>1.4.9</version.wicket>
-        <version.wicket>1.4.7</version.wicket>
+        <version.wicket>1.4.15</version.wicket>
         <version.quartz>1.8.0</version.quartz>
         <version.jetty>6.1.4</version.jetty>
         <version.commons-logging>1.1</version.commons-logging>
@@ -95,6 +95,7 @@
         <version.guice>2.0</version.guice>
         <version.db4o>8.0-SNAPSHOT</version.db4o>
         <version.neodatis>1.9.24.679</version.neodatis>
+        <version.swt>3.5.2</version.swt>
 
         <version.maven-assembly-plugin>2.2-beta-3</version.maven-assembly-plugin>
         <version.maven-jar-plugin>2.2</version.maven-jar-plugin>
@@ -102,12 +103,6 @@
         <version.maven-ear-plugin>2.3.2</version.maven-ear-plugin>
         <version.maven-datanucleus-plugin>1.1.4</version.maven-datanucleus-plugin>
     </properties>
-
-
-    <!-- ALL MODULES THAT ARE ENABLED BY DEFAULT -->
-    <modules>
-        <module>eclipse-config</module>
-    </modules>
 
 
     <!-- PROFILES THAT MODIFY DEFAULTS -->
@@ -120,10 +115,20 @@
                 <module>Gorillas.web</module>
                 <module>Deblock.web</module>
                 <module>snaplog</module>
+                <module>snaplog-web-client</module>
                 <module>taskdev</module>
                 <module>homepage</module>
+                <module>faelia</module>
+                <module>gillian</module>
                 <module>wish</module>
-                <module>ipos-notifier</module>
+                <module>ios-notifier</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>mod:netherpanel</id>
+            <modules>
+                <module>jlibs</module>
+                <module>NetherPanel</module>
             </modules>
         </profile>
         <profile>
@@ -147,6 +152,7 @@
             <modules>
                 <module>jlibs</module>
                 <module>snaplog</module>
+                <module>snaplog-web-client</module>
             </modules>
         </profile>
         <profile>
@@ -306,6 +312,26 @@
                 <artifactId>animatedtransitions</artifactId>
                 <version>${version.animatedtransitions}</version>
             </dependency>
+            <dependency>
+                <groupId>net.sf.jung</groupId>
+                <artifactId>jung-algorithms</artifactId>
+                <version>${version.jung}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.jung</groupId>
+                <artifactId>jung-api</artifactId>
+                <version>${version.jung}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.jung</groupId>
+                <artifactId>jung-graph-impl</artifactId>
+                <version>${version.jung}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.jung</groupId>
+                <artifactId>jung-visualization</artifactId>
+                <version>${version.jung}</version>
+            </dependency>
 
             <!-- WEB FRAMEWORK -->
             <dependency>
@@ -357,7 +383,6 @@
                 <version>${version.jetty}</version>
                 <scope>provided</scope>
             </dependency>
-
 
             <dependency>
                 <groupId>commons-logging</groupId>
@@ -420,11 +445,6 @@
                 <groupId>aopalliance</groupId>
                 <artifactId>aopalliance</artifactId>
                 <version>1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.inject</groupId>
-                <artifactId>guice-servlet</artifactId>
-                <version>${version.guice}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
@@ -498,10 +518,22 @@
                 <artifactId>jdo2-api</artifactId>
                 <version>2.3-eb</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.jetbrains</groupId>
+                <artifactId>annotations</artifactId>
+                <version>${jetbrains-annotations.version}</version>
+                <scope>provided</scope>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+        </dependency>
+    </dependencies>
 
 
     <!-- DEFAULT BUILD CONFIGURATION -->
@@ -643,52 +675,6 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <inherited>true</inherited>
-
-                <configuration>
-                    <projectNameTemplate>[artifactId]</projectNameTemplate>
-                    <!--buildOutputDirectory>${basedir}/eclipse</buildOutputDirectory-->
-
-                    <manifest>false</manifest>
-                    <wtpversion>2.0</wtpversion>
-                    <wtpmanifest>false</wtpmanifest>
-                    <wtpapplicationxml>false</wtpapplicationxml>
-
-                    <downloadSources>true</downloadSources>
-                    <downloadJavadocs>true</downloadJavadocs>
-
-                    <additionalConfig>
-                        <file>
-                            <name>.settings/org.eclipse.jdt.core.prefs</name>
-                            <location>org.eclipse.jdt.core.prefs</location>
-                        </file>
-                        <file>
-                            <name>.settings/org.eclipse.jdt.launching.prefs</name>
-                            <location>org.eclipse.jdt.launching.prefs</location>
-                        </file>
-                        <file>
-                            <name>.settings/org.eclipse.jdt.ui.prefs</name>
-                            <location>org.eclipse.jdt.ui.prefs</location>
-                        </file>
-                        <file>
-                            <name>.settings/org.eclipse.ltk.core.refactoring.prefs</name>
-                            <location>org.eclipse.ltk.core.refactoring.prefs</location>
-                        </file>
-                    </additionalConfig>
-                </configuration>
-
-                <dependencies>
-                    <dependency>
-                        <groupId>com.lyndir.lhunath</groupId>
-                        <artifactId>eclipse-config</artifactId>
-                        <version>1.0</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-
-            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>xml-maven-plugin</artifactId>
 
@@ -716,18 +702,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-
-            <plugin>
-                <artifactId>maven-clean-plugin</artifactId>
-                <!--
-                    Don't clean parent directory's target directory: it contains cache
-                    data such as eclipse:eclipse's downloadSources repository status.
-                -->
-                <inherited>false</inherited>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
             </plugin>
         </plugins>
 

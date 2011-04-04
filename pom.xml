@@ -7,7 +7,7 @@
     <groupId>com.lyndir.lhunath</groupId>
     <artifactId>lyndir</artifactId>
     <packaging>pom</packaging>
-    <version>SNAPSHOT</version>
+    <version>1.7</version>
     <name>Lyndir Group</name>
     <description>
         Group of Lyndir Projects

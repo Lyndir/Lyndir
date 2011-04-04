@@ -12,4 +12,5 @@
 !/eclipse-config/
 !/.idea
 /.idea/*
+*.iml
 !/.idea/projectCodeStyle.xml

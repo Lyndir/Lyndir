@@ -80,7 +80,7 @@
         <version.animatedtransitions>0.11</version.animatedtransitions>
         <version.jung>2.0.1</version.jung>
         <version.junit>4.5</version.junit>
-        <version.wicket>1.4.15</version.wicket>
+        <version.wicket>1.4.17</version.wicket>
         <version.quartz>1.8.0</version.quartz>
         <version.jetty>6.1.4</version.jetty>
         <version.commons-logging>1.1</version.commons-logging>

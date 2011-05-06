@@ -85,8 +85,8 @@
         <version.jetty>6.1.4</version.jetty>
         <version.commons-logging>1.1</version.commons-logging>
         <version.commons-logging-api>1.1</version.commons-logging-api>
-        <version.slf4j>1.5.11</version.slf4j>
-        <version.logback>0.9.15</version.logback>
+        <version.slf4j>1.6.1</version.slf4j>
+        <version.logback>0.9.28</version.logback>
         <version.javaee>5.0-1</version.javaee>
         <version.servlet-api>2.4</version.servlet-api>
         <version.joda-time>1.6</version.joda-time>

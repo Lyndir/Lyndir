@@ -145,7 +145,7 @@
         <profile>
             <id>mod:all</id>
             <modules>
-                <module>jlibs</module>
+                <module>opal</module>
                 <module>apps</module>
                 <module>Gorillas.web</module>
                 <module>Deblock.web</module>
@@ -162,14 +162,14 @@
         <profile>
             <id>mod:netherpanel</id>
             <modules>
-                <module>jlibs</module>
+                <module>opal</module>
                 <module>NetherPanel</module>
             </modules>
         </profile>
         <profile>
             <id>mod:gorillas</id>
             <modules>
-                <module>jlibs</module>
+                <module>opal</module>
                 <module>apps</module>
                 <module>Gorillas.web</module>
             </modules>
@@ -177,7 +177,7 @@
         <profile>
             <id>mod:deblock</id>
             <modules>
-                <module>jlibs</module>
+                <module>opal</module>
                 <module>apps</module>
                 <module>Deblock.web</module>
             </modules>
@@ -185,7 +185,7 @@
         <profile>
             <id>mod:snaplog</id>
             <modules>
-                <module>jlibs</module>
+                <module>opal</module>
                 <module>snaplog</module>
                 <module>snaplog-web-client</module>
             </modules>
@@ -193,21 +193,21 @@
         <profile>
             <id>mod:taskdev</id>
             <modules>
-                <module>jlibs</module>
+                <module>opal</module>
                 <module>taskdev</module>
             </modules>
         </profile>
         <profile>
             <id>mod:homepage</id>
             <modules>
-                <module>jlibs</module>
+                <module>opal</module>
                 <module>homepage</module>
             </modules>
         </profile>
         <profile>
             <id>mod:wish</id>
             <modules>
-                <module>jlibs</module>
+                <module>opal</module>
                 <module>wish</module>
             </modules>
         </profile>

@@ -150,7 +150,7 @@
                 <module>Gorillas.web</module>
                 <module>Deblock.web</module>
                 <module>snaplog</module>
-                <module>snaplog-web-client</module>
+                <!--module>snaplog-web-client</module-->
                 <module>taskdev</module>
                 <module>homepage</module>
                 <module>faelia</module>
@@ -187,7 +187,7 @@
             <modules>
                 <module>opal</module>
                 <module>snaplog</module>
-                <module>snaplog-web-client</module>
+                <!--module>snaplog-web-client</module-->
             </modules>
         </profile>
         <profile>

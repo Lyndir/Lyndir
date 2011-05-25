@@ -89,46 +89,46 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <version.gson>1.4</version.gson>
-        <version.guava>r05</version.guava>
-        <version.java-image-scaling>0.8.4</version.java-image-scaling>
-        <version.bouncycastle>141</version.bouncycastle>
-        <version.httpclient>3.1-rc1</version.httpclient>
-        <version.jets3t>0.7.3</version.jets3t>
-        <version.jlibdiff>1.01</version.jlibdiff>
-        <version.jtidy>r8-20060801</version.jtidy>
-        <version.xom>1.2</version.xom>
-        <version.xpp3>1.1.4c</version.xpp3>
-        <version.xstream>1.3.1</version.xstream>
-        <version.looks>2.2.0</version.looks>
-        <version.forms>1.2.1</version.forms>
-        <version.timingframework>1.0</version.timingframework>
-        <version.animatedtransitions>0.11</version.animatedtransitions>
-        <version.jung>2.0.1</version.jung>
-        <version.junit>4.5</version.junit>
-        <version.wicket>1.4.17</version.wicket>
-        <version.quartz>1.8.0</version.quartz>
-        <version.jetty>6.1.4</version.jetty>
-        <version.commons-logging>1.1</version.commons-logging>
-        <version.commons-logging-api>1.1</version.commons-logging-api>
-        <version.slf4j>1.6.1</version.slf4j>
-        <version.logback>0.9.28</version.logback>
-        <version.javaee>5.0-1</version.javaee>
-        <version.servlet-api>2.4</version.servlet-api>
-        <version.joda-time>1.6</version.joda-time>
-        <version.json-lib>2.2.3</version.json-lib>
-        <version.persistence-api>1.0</version.persistence-api>
-        <version.guice>2.0</version.guice>
-        <version.db4o>8.0-SNAPSHOT</version.db4o>
-        <version.neodatis>1.9.24.679</version.neodatis>
-        <version.swt>3.5.2</version.swt>
-        <version.jetbrains-annotations>7.0.2</version.jetbrains-annotations>
+        <gson.version>1.4</gson.version>
+        <guava.version>r05</guava.version>
+        <java-image-scaling.version>0.8.4</java-image-scaling.version>
+        <bouncycastle.version>1.46</bouncycastle.version>
+        <httpclient.version>3.1-rc1</httpclient.version>
+        <jets3t.version>0.7.3</jets3t.version>
+        <jlibdiff.version>1.01</jlibdiff.version>
+        <jtidy.version>r8-20060801</jtidy.version>
+        <xom.version>1.2</xom.version>
+        <xpp3.version>1.1.4c</xpp3.version>
+        <xstream.version>1.3.1</xstream.version>
+        <looks.version>2.2.0</looks.version>
+        <forms.version>1.2.1</forms.version>
+        <timingframework.version>1.0</timingframework.version>
+        <animatedtransitions.version>0.11</animatedtransitions.version>
+        <jung.version>2.0.1</jung.version>
+        <junit.version>4.5</junit.version>
+        <wicket.version>1.4.17</wicket.version>
+        <quartz.version>1.8.0</quartz.version>
+        <jetty.version>6.1.4</jetty.version>
+        <commons-logging.version>1.1</commons-logging.version>
+        <commons-logging-api.version>1.1</commons-logging-api.version>
+        <slf4j.version>1.6.1</slf4j.version>
+        <logback.version>0.9.28</logback.version>
+        <javaee.version>5.0-1</javaee.version>
+        <servlet-api.version>2.4</servlet-api.version>
+        <joda-time.version>1.6</joda-time.version>
+        <json-lib.version>2.2.3</json-lib.version>
+        <persistence-api.version>1.0</persistence-api.version>
+        <guice.version>2.0</guice.version>
+        <db4o.version>8.0-SNAPSHOT</db4o.version>
+        <neodatis.version>1.9.24.679</neodatis.version>
+        <swt.version>3.5.2</swt.version>
+        <jetbrains-annotations.version>7.0.2</jetbrains-annotations.version>
 
-        <version.maven-assembly-plugin>2.2-beta-3</version.maven-assembly-plugin>
-        <version.maven-jar-plugin>2.2</version.maven-jar-plugin>
-        <version.maven-war-plugin>2.1-beta-1</version.maven-war-plugin>
-        <version.maven-ear-plugin>2.3.2</version.maven-ear-plugin>
-        <version.maven-datanucleus-plugin>1.1.4</version.maven-datanucleus-plugin>
+        <maven-assembly-plugin.version>2.2-beta-3</maven-assembly-plugin.version>
+        <maven-jar-plugin.version>2.2</maven-jar-plugin.version>
+        <maven-war-plugin.version>2.1-beta-1</maven-war-plugin.version>
+        <maven-ear-plugin.version>2.3.2</maven-ear-plugin.version>
+        <maven-datanucleus-plugin.version>1.1.4</maven-datanucleus-plugin.version>
     </properties>
 
 
@@ -253,105 +253,105 @@
 
             <!-- CRYPTO -->
             <dependency>
-                <groupId>bouncycastle</groupId>
+                <groupId>org.bouncycastle</groupId>
                 <artifactId>bcpg-jdk15</artifactId>
-                <version>${version.bouncycastle}</version>
+                <version>${bouncycastle.version}</version>
             </dependency>
             <dependency>
-                <groupId>bouncycastle</groupId>
+                <groupId>org.bouncycastle</groupId>
                 <artifactId>bcprov-jdk15</artifactId>
-                <version>${version.bouncycastle}</version>
+                <version>${bouncycastle.version}</version>
             </dependency>
 
             <!-- NETWORK -->
             <dependency>
                 <groupId>commons-httpclient</groupId>
                 <artifactId>commons-httpclient</artifactId>
-                <version>${version.httpclient}</version>
+                <version>${httpclient.version}</version>
             </dependency>
             <dependency>
                 <groupId>net.java.dev.jets3t</groupId>
                 <artifactId>jets3t</artifactId>
-                <version>${version.jets3t}</version>
+                <version>${jets3t.version}</version>
             </dependency>
 
             <!-- UTILITIES -->
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>${version.guava}</version>
+                <version>${guava.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mortennobel</groupId>
                 <artifactId>java-image-scaling</artifactId>
-                <version>${version.java-image-scaling}</version>
+                <version>${java-image-scaling.version}</version>
             </dependency>
 
             <!-- PARSING -->
             <dependency>
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
-                <version>${version.gson}</version>
+                <version>${gson.version}</version>
             </dependency>
             <dependency>
                 <groupId>jlibdiff</groupId>
                 <artifactId>jlibdiff</artifactId>
-                <version>${version.jlibdiff}</version>
+                <version>${jlibdiff.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>jtidy</artifactId>
-                <version>${version.jtidy}</version>
+                <version>${jtidy.version}</version>
             </dependency>
             <dependency>
                 <groupId>xom</groupId>
                 <artifactId>xom</artifactId>
-                <version>${version.xom}</version>
+                <version>${xom.version}</version>
             </dependency>
             <dependency>
                 <groupId>xpp3</groupId>
                 <artifactId>xpp3</artifactId>
-                <version>${version.xpp3}</version>
+                <version>${xpp3.version}</version>
             </dependency>
             <dependency>
                 <groupId>xpp3</groupId>
                 <artifactId>xpp3_min</artifactId>
-                <version>${version.xpp3}</version>
+                <version>${xpp3.version}</version>
             </dependency>
             <dependency>
                 <groupId>xpp3</groupId>
                 <artifactId>xpp3_xpath</artifactId>
-                <version>${version.xpp3}</version>
+                <version>${xpp3.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.thoughtworks.xstream</groupId>
                 <artifactId>xstream</artifactId>
-                <version>${version.xstream}</version>
+                <version>${xstream.version}</version>
             </dependency>
             <dependency>
                 <groupId>net.sf.json-lib</groupId>
                 <artifactId>json-lib</artifactId>
                 <classifier>jdk15</classifier>
-                <version>${version.json-lib}</version>
+                <version>${json-lib.version}</version>
             </dependency>
 
             <!-- TESTING -->
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>${version.junit}</version>
+                <version>${junit.version}</version>
             </dependency>
 
             <!-- TIME -->
             <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
-                <version>${version.joda-time}</version>
+                <version>${joda-time.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.quartz-scheduler</groupId>
                 <artifactId>quartz</artifactId>
-                <version>${version.quartz}</version>
+                <version>${quartz.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.slf4j</groupId>
@@ -364,151 +364,151 @@
             <dependency>
                 <groupId>com.jgoodies</groupId>
                 <artifactId>looks</artifactId>
-                <version>${version.looks}</version>
+                <version>${looks.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.jgoodies</groupId>
                 <artifactId>forms</artifactId>
-                <version>${version.forms}</version>
+                <version>${forms.version}</version>
             </dependency>
             <dependency>
                 <groupId>net.java.dev.timingframework</groupId>
                 <artifactId>timingframework</artifactId>
-                <version>${version.timingframework}</version>
+                <version>${timingframework.version}</version>
             </dependency>
             <dependency>
                 <groupId>net.java.dev.animatedtransitions</groupId>
                 <artifactId>animatedtransitions</artifactId>
-                <version>${version.animatedtransitions}</version>
+                <version>${animatedtransitions.version}</version>
             </dependency>
             <dependency>
                 <groupId>net.sf.jung</groupId>
                 <artifactId>jung-algorithms</artifactId>
-                <version>${version.jung}</version>
+                <version>${jung.version}</version>
             </dependency>
             <dependency>
                 <groupId>net.sf.jung</groupId>
                 <artifactId>jung-api</artifactId>
-                <version>${version.jung}</version>
+                <version>${jung.version}</version>
             </dependency>
             <dependency>
                 <groupId>net.sf.jung</groupId>
                 <artifactId>jung-graph-impl</artifactId>
-                <version>${version.jung}</version>
+                <version>${jung.version}</version>
             </dependency>
             <dependency>
                 <groupId>net.sf.jung</groupId>
                 <artifactId>jung-visualization</artifactId>
-                <version>${version.jung}</version>
+                <version>${jung.version}</version>
             </dependency>
 
             <!-- WEB FRAMEWORK -->
             <dependency>
                 <groupId>org.apache.openejb</groupId>
                 <artifactId>javaee-api</artifactId>
-                <version>${version.javaee}</version>
+                <version>${javaee.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.wicket</groupId>
                 <artifactId>wicket</artifactId>
-                <version>${version.wicket}</version>
+                <version>${wicket.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.wicket</groupId>
                 <artifactId>wicket-extensions</artifactId>
-                <version>${version.wicket}</version>
+                <version>${wicket.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.wicket</groupId>
                 <artifactId>wicket-ioc</artifactId>
-                <version>${version.wicket}</version>
+                <version>${wicket.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.wicket</groupId>
                 <artifactId>wicket-guice</artifactId>
-                <version>${version.wicket}</version>
+                <version>${wicket.version}</version>
             </dependency>
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>servlet-api</artifactId>
-                <version>${version.servlet-api}</version>
+                <version>${servlet-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty</artifactId>
-                <version>${version.jetty}</version>
+                <version>${jetty.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-util</artifactId>
-                <version>${version.jetty}</version>
+                <version>${jetty.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-management</artifactId>
-                <version>${version.jetty}</version>
+                <version>${jetty.version}</version>
                 <scope>provided</scope>
             </dependency>
 
             <dependency>
                 <groupId>commons-logging</groupId>
                 <artifactId>commons-logging</artifactId>
-                <version>${version.commons-logging}</version>
+                <version>${commons-logging.version}</version>
                 <!-- Toss commons-logging out by default -->
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
-                <version>${version.logback}</version>
+                <version>${logback.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-jdk14</artifactId>
-                <version>${version.slf4j}</version>
+                <version>${slf4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>jcl-over-slf4j</artifactId>
-                <version>${version.slf4j}</version>
+                <version>${slf4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>jul-to-slf4j</artifactId>
-                <version>${version.slf4j}</version>
+                <version>${slf4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>log4j-over-slf4j</artifactId>
-                <version>${version.slf4j}</version>
+                <version>${slf4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-log4j12</artifactId>
-                <version>${version.slf4j}</version>
+                <version>${slf4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-jcl</artifactId>
-                <version>${version.slf4j}</version>
+                <version>${slf4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>${version.slf4j}</version>
+                <version>${slf4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>javax.persistence</groupId>
                 <artifactId>persistence-api</artifactId>
-                <version>${version.persistence-api}</version>
+                <version>${persistence-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
                 <artifactId>guice-servlet</artifactId>
-                <version>${version.guice}</version>
+                <version>${guice.version}</version>
             </dependency>
             <dependency>
                 <groupId>aopalliance</groupId>
@@ -518,7 +518,7 @@
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
                 <artifactId>guice-assisted-inject</artifactId>
-                <version>${version.guice}</version>
+                <version>${guice.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.appengine.orm</groupId>
@@ -538,22 +538,22 @@
             <dependency>
                 <groupId>com.db4o</groupId>
                 <artifactId>db4o-core-java5</artifactId>
-                <version>${version.db4o}</version>
+                <version>${db4o.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.db4o</groupId>
                 <artifactId>db4o-nqopt-java5</artifactId>
-                <version>${version.db4o}</version>
+                <version>${db4o.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.db4o</groupId>
                 <artifactId>db4o-taj-java5</artifactId>
-                <version>${version.db4o}</version>
+                <version>${db4o.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.neodatis</groupId>
                 <artifactId>neodatis-odb</artifactId>
-                <version>${version.neodatis}</version>
+                <version>${neodatis.version}</version>
             </dependency>
 
             <!-- Remove when datanucleus-appengine gets updated. -->
@@ -580,7 +580,7 @@
             <dependency>
                 <groupId>org.jetbrains</groupId>
                 <artifactId>annotations</artifactId>
-                <version>${version.jetbrains-annotations}</version>
+                <version>${jetbrains-annotations.version}</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -718,27 +718,27 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <version>${version.maven-assembly-plugin}</version>
+                    <version>${maven-assembly-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>${version.maven-jar-plugin}</version>
+                    <version>${maven-jar-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
-                    <version>${version.maven-war-plugin}</version>
+                    <version>${maven-war-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-ear-plugin</artifactId>
-                    <version>${version.maven-ear-plugin}</version>
+                    <version>${maven-ear-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.datanucleus</groupId>
                     <artifactId>maven-datanucleus-plugin</artifactId>
-                    <version>${version.maven-datanucleus-plugin}</version>
+                    <version>${maven-datanucleus-plugin.version}</version>
                     <dependencies>
                         <dependency>
                             <groupId>org.datanucleus</groupId>

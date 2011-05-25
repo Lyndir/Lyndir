@@ -20,15 +20,19 @@
         <developerConnection>${scm.codaset.devbase}/lyndir.git</developerConnection>
     </scm>
     <issueManagement>
-        <system>Codaset</system>
-        <url>http://codaset.com/lhunath/lyndir/tickets</url>
+        <system>YouTrack</system>
+        <url>https://youtrack.lyndir.com/issues</url>
     </issueManagement>
+    <ciManagement>
+        <system>TeamCity</system>
+        <url>https://teamcity.lyndir.com</url>
+    </ciManagement>
 
 
     <!-- ORGANIZATION METADATA -->
     <organization>
-        <name>Lhunath</name>
-        <url>http://www.lhunath.com</url>
+        <name>Lyndir</name>
+        <url>http://www.lyndir.com</url>
     </organization>
     <licenses>
         <license>
@@ -62,7 +66,6 @@
         <scm.codaset.webbase>http://codaset.com/lhunath</scm.codaset.webbase>
         <scm.codaset.pubbase>scm:git:git://codaset.com/lhunath</scm.codaset.pubbase>
         <scm.codaset.devbase>scm:git:ssh://git@codaset.com/lhunath</scm.codaset.devbase>
-
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -630,7 +633,7 @@
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <developmentVersion>GIT-SNAPSHOT</developmentVersion>
                         <localCheckout>true</localCheckout>
-                        <preparationGoals>clean install</preparationGoals>
+                        <preparationGoals>clean install site</preparationGoals>
                         <updateBranchVersions>true</updateBranchVersions>
                         <updateWorkingCopyVersions>false</updateWorkingCopyVersions>
                         <branchName>${project.version}-maint</branchName>

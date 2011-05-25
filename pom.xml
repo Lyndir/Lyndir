@@ -9,7 +9,7 @@
 
     <groupId>com.lyndir.lhunath</groupId>
     <artifactId>lyndir</artifactId>
-    <version>GIT-SNAPSHOT</version>
+    <version>1.12</version>
     <packaging>pom</packaging>
 
 

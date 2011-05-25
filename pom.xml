@@ -254,12 +254,12 @@
             <!-- CRYPTO -->
             <dependency>
                 <groupId>org.bouncycastle</groupId>
-                <artifactId>bcpg-jdk15</artifactId>
+                <artifactId>bcpg-jdk16</artifactId>
                 <version>${bouncycastle.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.bouncycastle</groupId>
-                <artifactId>bcprov-jdk15</artifactId>
+                <artifactId>bcprov-jdk16</artifactId>
                 <version>${bouncycastle.version}</version>
             </dependency>
 

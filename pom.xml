@@ -53,9 +53,9 @@
     <properties>
         <release.version>1.6</release.version>
 
-        <scm.github.webbase>http://github.com/Lamentum</scm.github.webbase>
-        <scm.github.pubbase>scm:git:git://github.com/Lamentum</scm.github.pubbase>
-        <scm.github.devbase>scm:git:ssh://git@github.com/Lamentum</scm.github.devbase>
+        <scm.github.webbase>http://github.com/Lyndir</scm.github.webbase>
+        <scm.github.pubbase>scm:git:git://github.com/Lyndir</scm.github.pubbase>
+        <scm.github.devbase>scm:git:ssh://git@github.com/Lyndir</scm.github.devbase>
         <scm.codaset.webbase>http://codaset.com/lhunath</scm.codaset.webbase>
         <scm.codaset.pubbase>scm:git:git://codaset.com/lhunath</scm.codaset.pubbase>
         <scm.codaset.devbase>scm:git:ssh://git@codaset.com/lhunath</scm.codaset.devbase>

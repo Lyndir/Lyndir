@@ -633,7 +633,7 @@
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <developmentVersion>GIT-SNAPSHOT</developmentVersion>
                         <localCheckout>true</localCheckout>
-                        <preparationGoals>clean install site</preparationGoals>
+                        <preparationGoals>clean install</preparationGoals>
                         <updateBranchVersions>true</updateBranchVersions>
                         <updateWorkingCopyVersions>false</updateWorkingCopyVersions>
                         <branchName>${project.version}-maint</branchName>

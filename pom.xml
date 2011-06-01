@@ -90,9 +90,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <gson.version>1.4</gson.version>
-        <guava.version>r05</guava.version>
+        <guava.version>r09</guava.version>
         <java-image-scaling.version>0.8.4</java-image-scaling.version>
-        <bouncycastle.version>1.46</bouncycastle.version>
+        <bouncycastle.version>1.45</bouncycastle.version>
         <httpclient.version>3.1-rc1</httpclient.version>
         <jets3t.version>0.7.3</jets3t.version>
         <jlibdiff.version>1.01</jlibdiff.version>
@@ -181,6 +181,7 @@
             <modules>
                 <module>opal</module>
                 <module>apps</module>
+                <module>portal</module>
                 <module>Gorillas.web</module>
                 <module>Deblock.web</module>
                 <module>snaplog</module>

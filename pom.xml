@@ -946,7 +946,7 @@
         <repository>
             <id>db4o</id>
             <name>db4o Repository</name>
-            <url>https://source.db4o.com/maven/</url>
+            <url>http://source.db4o.com/maven/</url>
 
             <snapshots>
                 <enabled>true</enabled>

@@ -122,11 +122,13 @@
         <db4o.version>8.0-SNAPSHOT</db4o.version>
         <neodatis.version>1.9.24.679</neodatis.version>
         <swt.version>3.5.2</swt.version>
+        <maven-jetty-plugin.version>6.1.24</maven-jetty-plugin.version>
         <jetbrains-annotations.version>7.0.2</jetbrains-annotations.version>
 
         <maven-assembly-plugin.version>2.2-beta-3</maven-assembly-plugin.version>
         <maven-jar-plugin.version>2.2</maven-jar-plugin.version>
         <maven-war-plugin.version>2.1-beta-1</maven-war-plugin.version>
+        <maven-warpath-plugin.version>2.1.0</maven-warpath-plugin.version>
         <maven-ear-plugin.version>2.3.2</maven-ear-plugin.version>
         <maven-datanucleus-plugin.version>1.1.4</maven-datanucleus-plugin.version>
     </properties>
@@ -177,10 +179,9 @@
         </profile>
 
         <profile>
-            <id>mod:all</id>
+            <id>mod:ide</id>
             <modules>
                 <module>opal</module>
-                <module>apps</module>
                 <module>portal</module>
                 <module>Gorillas.web</module>
                 <module>Deblock.web</module>
@@ -199,22 +200,6 @@
             <modules>
                 <module>opal</module>
                 <module>NetherPanel</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>mod:gorillas</id>
-            <modules>
-                <module>opal</module>
-                <module>apps</module>
-                <module>Gorillas.web</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>mod:deblock</id>
-            <modules>
-                <module>opal</module>
-                <module>apps</module>
-                <module>Deblock.web</module>
             </modules>
         </profile>
         <profile>
@@ -665,7 +650,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.0-beta-3</version>
+                    <!--version>3.0-beta-3</version-->
                     <!-- Automatic execution of this goal in maven-2 is not done any more in maven-3 -->
                     <executions>
                         <execution>
@@ -730,11 +715,70 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>${maven-war-plugin.version}</version>
+                    <configuration>
+                        <filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
+                        <webResources>
+                            <resource>
+                                <directory>${basedir}/src/main/webapp/WEB-INF</directory>
+                                <targetPath>WEB-INF</targetPath>
+                                <filtering>true</filtering>
+                            </resource>
+                            <resource>
+                                <directory>${basedir}/src/main/java</directory>
+                                <targetPath>WEB-INF/classes</targetPath>
+                                <filtering>false</filtering>
+                                <excludes>
+                                    <exclude>**/*.java</exclude>
+                                </excludes>
+                            </resource>
+                        </webResources>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.appfuse.plugins</groupId>
+                    <artifactId>maven-warpath-plugin</artifactId>
+                    <version>${maven-warpath-plugin.version}</version>
+                    <extensions>true</extensions>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>add-classes</goal>
+                            </goals>
+                        </execution>
+                  </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-ear-plugin</artifactId>
                     <version>${maven-ear-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>maven-jetty-plugin</artifactId>
+                    <version>${maven-jetty-plugin.version}</version>
+                    <configuration>
+                        <connectors>
+                            <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                                <host>0.0.0.0</host>
+                                <port>8080</port>
+                            </connector>
+                        </connectors>
+                        <contextPath>/</contextPath>
+                        <scanIntervalSeconds>2</scanIntervalSeconds>
+                        <systemProperties>
+                            <systemProperty>
+                                <name>logback.configurationFile</name>
+                                <value>${basedir}/target/classes/logback.xml</value>
+                            </systemProperty>
+                        </systemProperties>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>ch.qos.logback</groupId>
+                            <artifactId>logback-classic</artifactId>
+                            <version>${logback.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.datanucleus</groupId>
@@ -786,6 +830,16 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.appfuse.plugins</groupId>
+                <artifactId>maven-warpath-plugin</artifactId>
+            </plugin>
+        </plugins>
 
     </build>
 

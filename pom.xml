@@ -117,11 +117,11 @@
         <servlet-api.version>2.4</servlet-api.version>
         <joda-time.version>1.6</joda-time.version>
         <json-lib.version>2.2.3</json-lib.version>
-        <persistence-api.version>1.0</persistence-api.version>
         <guice.version>2.0</guice.version>
         <db4o.version>8.0-SNAPSHOT</db4o.version>
         <neodatis.version>1.9.24.679</neodatis.version>
         <swt.version>3.5.2</swt.version>
+        <cglib.version>2.2.2</cglib.version>
         <maven-jetty-plugin.version>6.1.24</maven-jetty-plugin.version>
         <jetbrains-annotations.version>7.0.2</jetbrains-annotations.version>
 
@@ -272,6 +272,11 @@
                 <groupId>com.mortennobel</groupId>
                 <artifactId>java-image-scaling</artifactId>
                 <version>${java-image-scaling.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
             </dependency>
 
             <!-- PARSING -->
@@ -486,11 +491,6 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>javax.persistence</groupId>
-                <artifactId>persistence-api</artifactId>
-                <version>${persistence-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>

@@ -89,7 +89,7 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <gson.version>1.4</gson.version>
+        <gson.version>1.7.1</gson.version>
         <guava.version>r09</guava.version>
         <java-image-scaling.version>0.8.4</java-image-scaling.version>
         <bouncycastle.version>1.45</bouncycastle.version>
@@ -122,6 +122,7 @@
         <neodatis.version>1.9.24.679</neodatis.version>
         <swt.version>3.5.2</swt.version>
         <cglib.version>2.2.2</cglib.version>
+        <objenesis.version>1.2</objenesis.version>
         <maven-jetty-plugin.version>6.1.24</maven-jetty-plugin.version>
         <jetbrains-annotations.version>7.0.2</jetbrains-annotations.version>
 
@@ -193,7 +194,7 @@
                 <module>gillian</module>
                 <module>wish</module>
                 <module>ios-notifier</module>
-                <module>grantmywish.es</module>
+                <module>grantmywishes</module>
             </modules>
         </profile>
         <profile>
@@ -277,6 +278,11 @@
                 <groupId>cglib</groupId>
                 <artifactId>cglib</artifactId>
                 <version>${cglib.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.objenesis</groupId>
+                <artifactId>objenesis</artifactId>
+                <version>${objenesis.version}</version>
             </dependency>
 
             <!-- PARSING -->

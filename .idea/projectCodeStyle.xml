@@ -73,7 +73,7 @@
         <option name="VARIABLE_ANNOTATION_WRAP" value="2" />
         <option name="ENUM_CONSTANTS_WRAP" value="2" />
         <CssCodeStyleSettings>
-          <option name="VALUE_ALIGNMENT" value="2" />
+          <option name="BLANK_LINES_BETWEEN_BLOCKS" value="0" />
         </CssCodeStyleSettings>
         <ADDITIONAL_INDENT_OPTIONS fileType="css">
           <option name="INDENT_SIZE" value="4" />

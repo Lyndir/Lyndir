@@ -35,9 +35,9 @@
 
     <!-- CODE ACCESS -->
     <scm>
-        <url>${scm.codaset.webbase}/projects</url>
-        <connection>${scm.codaset.pubbase}/lyndir.git</connection>
-        <developerConnection>${scm.codaset.devbase}/lyndir.git</developerConnection>
+        <url>${scm.github.webbase}/projects</url>
+        <connection>${scm.github.pubbase}/lyndir.git</connection>
+        <developerConnection>${scm.github.devbase}/lyndir.git</developerConnection>
     </scm>
     <issueManagement>
         <system>YouTrack</system>
@@ -92,7 +92,7 @@
         <android-maven-plugin.version>3.5.0</android-maven-plugin.version>
         <android-platform.version>4.1.1.4</android-platform.version>
         <gson.version>1.7.1</gson.version>
-        <guava.version>r09</guava.version>
+        <guava.version>14.0.1</guava.version>
         <java-image-scaling.version>0.8.4</java-image-scaling.version>
         <bouncycastle.version>1.45</bouncycastle.version>
         <httpclient.version>3.1-rc1</httpclient.version>
@@ -125,6 +125,7 @@
         <swt.version>3.5.2</swt.version>
         <cglib.version>2.2.2</cglib.version>
         <objenesis.version>1.2</objenesis.version>
+        <reflections.version>0.9.9-RC1</reflections.version>
         <maven-jetty-plugin.version>6.1.24</maven-jetty-plugin.version>
         <jetbrains-annotations.version>7.0.2</jetbrains-annotations.version>
 
@@ -287,6 +288,11 @@
                 <groupId>org.objenesis</groupId>
                 <artifactId>objenesis</artifactId>
                 <version>${objenesis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>${reflections.version}</version>
             </dependency>
 
             <!-- PARSING -->

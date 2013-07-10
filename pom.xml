@@ -93,6 +93,7 @@
         <android-platform.version>4.1.1.4</android-platform.version>
         <gson.version>1.7.1</gson.version>
         <guava.version>14.0.1</guava.version>
+        <jsr305.version>2.0.1</jsr305.version>
         <java-image-scaling.version>0.8.4</java-image-scaling.version>
         <bouncycastle.version>1.45</bouncycastle.version>
         <httpclient.version>3.1-rc1</httpclient.version>
@@ -198,7 +199,7 @@
                 <module>wish</module>
                 <module>ios-notifier</module>
                 <module>grantmywishes</module>
-                <module>omnicron</module>
+                <module>omicron</module>
                 <module>tests</module>
             </modules>
         </profile>
@@ -238,6 +239,13 @@
                 <module>wish</module>
             </modules>
         </profile>
+        <profile>
+            <id>mod:omicron</id>
+            <modules>
+                <module>opal</module>
+                <module>omicron</module>
+            </modules>
+        </profile>
     </profiles>
 
     <!-- VERSION MANAGEMENT OF DEPENDENCIES -->
@@ -275,6 +283,11 @@
                 <version>${guava.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>${jsr305.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.mortennobel</groupId>
                 <artifactId>java-image-scaling</artifactId>
                 <version>${java-image-scaling.version}</version>
@@ -293,6 +306,12 @@
                 <groupId>org.reflections</groupId>
                 <artifactId>reflections</artifactId>
                 <version>${reflections.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.guava</groupId>
+                        <artifactId>guava</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <!-- PARSING -->
@@ -738,6 +757,8 @@
 
                         <meminitial>16m</meminitial>
                         <maxmem>512m</maxmem>
+                        <source>1.7</source>
+                        <target>1.7</target>
                     </configuration>
                 </plugin>
                 <plugin>

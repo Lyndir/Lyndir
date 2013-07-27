@@ -11,6 +11,12 @@
 # Environment projects
 !/eclipse-config/
 !/.idea
-/.idea/*
+/.idea/workspace.xml
+/.idea/libraries
+/.idea/compiler.xml
+/.idea/encodings.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/runConfigurations
+/.idea/vcs.xml
 *.iml
-!/.idea/projectCodeStyle.xml

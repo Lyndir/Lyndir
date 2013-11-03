@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -122,7 +121,7 @@
         <servlet-api.version>2.4</servlet-api.version>
         <joda-time.version>1.6</joda-time.version>
         <json-lib.version>2.2.3</json-lib.version>
-        <guice.version>2.0</guice.version>
+        <guice.version>3.0</guice.version>
         <db4o.version>8.0-SNAPSHOT</db4o.version>
         <neodatis.version>1.9.24.679</neodatis.version>
         <swt.version>3.5.2</swt.version>
@@ -245,6 +244,12 @@
             <modules>
                 <module>opal</module>
                 <module>omicron</module>
+            </modules>
+        </profile>
+    <profile>
+            <id>mod:pirates</id>
+            <modules>
+                <module>android-pirates</module>
             </modules>
         </profile>
     </profiles>
@@ -544,15 +549,20 @@
                 <version>${guice.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>aopalliance</groupId>
                 <artifactId>aopalliance</artifactId>
                 <version>1.0</version>
             </dependency>
-            <dependency>
+            <!--dependency>
                 <groupId>com.google.inject.extensions</groupId>
                 <artifactId>guice-assisted-inject</artifactId>
                 <version>${guice.version}</version>
-            </dependency>
+            </dependency-->
             <dependency>
                 <groupId>com.google.appengine.orm</groupId>
                 <artifactId>datanucleus-appengine</artifactId>
@@ -751,10 +761,13 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>2.5.1</version>
+                    <version>3.1</version>
 
                     <configuration>
-                        <fork>true</fork>
+                        <!--compilerId>javac-with-errorprone</compilerId-->
+                        <forceJavacCompilerUse>true</forceJavacCompilerUse>
+
+                        <!--fork>true</fork-->
                         <encoding>UTF-8</encoding>
                         <optimize>true</optimize>
                         <showWarnings>true</showWarnings>
@@ -765,6 +778,19 @@
                         <source>1.7</source>
                         <target>1.7</target>
                     </configuration>
+
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.codehaus.plexus</groupId>
+                            <artifactId>plexus-compiler-javac</artifactId>
+                            <version>2.3</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.plexus</groupId>
+                            <artifactId>plexus-compiler-javac-errorprone</artifactId>
+                            <version>2.3</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>

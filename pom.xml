@@ -122,6 +122,7 @@
         <joda-time.version>1.6</joda-time.version>
         <json-lib.version>2.2.3</json-lib.version>
         <guice.version>3.0</guice.version>
+        <jersey.version>1.17.1</jersey.version>
         <db4o.version>8.0-SNAPSHOT</db4o.version>
         <neodatis.version>1.9.24.679</neodatis.version>
         <swt.version>3.5.2</swt.version>
@@ -542,6 +543,21 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.jersey</groupId>
+                <artifactId>jersey-server</artifactId>
+                <version>${jersey.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.jersey</groupId>
+                <artifactId>jersey-servlet</artifactId>
+                <version>${jersey.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.jersey.contribs</groupId>
+                <artifactId>jersey-guice</artifactId>
+                <version>${jersey.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>

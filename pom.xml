@@ -92,7 +92,8 @@
         <android-platform.version>4.1.1.4</android-platform.version>
         <gson.version>1.7.1</gson.version>
         <guava.version>14.0.1</guava.version>
-        <jsr305.version>2.0.1</jsr305.version>
+        <findbugs.version>2.0.3</findbugs.version>
+        <jetbrains-annotations.version>7.0.2</jetbrains-annotations.version>
         <java-image-scaling.version>0.8.4</java-image-scaling.version>
         <bouncycastle.version>1.45</bouncycastle.version>
         <httpclient.version>3.1-rc1</httpclient.version>
@@ -292,7 +293,18 @@
             <dependency>
                 <groupId>com.google.code.findbugs</groupId>
                 <artifactId>jsr305</artifactId>
-                <version>${jsr305.version}</version>
+                <version>${findbugs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>annotations</artifactId>
+                <version>${findbugs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains</groupId>
+                <artifactId>annotations</artifactId>
+                <version>${jetbrains-annotations.version}</version>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>com.mortennobel</groupId>
@@ -663,6 +675,14 @@
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+        </dependency>
     </dependencies>
 
 
@@ -780,7 +800,7 @@
                     <version>3.1</version>
 
                     <configuration>
-                        <!--compilerId>javac-with-errorprone</compilerId-->
+                        <compilerId>javac-with-errorprone</compilerId>
                         <forceJavacCompilerUse>true</forceJavacCompilerUse>
 
                         <!--fork>true</fork-->
@@ -796,6 +816,11 @@
                     </configuration>
 
                     <dependencies>
+                        <dependency>
+                            <groupId>com.google.errorprone</groupId>
+                            <artifactId>error_prone_core</artifactId>
+                            <version>1.1.1</version>
+                        </dependency>
                         <dependency>
                             <groupId>org.codehaus.plexus</groupId>
                             <artifactId>plexus-compiler-javac</artifactId>

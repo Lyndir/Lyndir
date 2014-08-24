@@ -88,10 +88,14 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <protobuf.version>2.5.0</protobuf.version>
+        <protobuf-tools.version>0.3.2</protobuf-tools.version>
+        <thrift.version>0.9.1</thrift.version>
+        <thrift-tools.version>0.1.11</thrift-tools.version>
         <android-maven-plugin.version>3.5.0</android-maven-plugin.version>
         <android-platform.version>4.1.1.4</android-platform.version>
         <gson.version>1.7.1</gson.version>
-        <guava.version>14.0.1</guava.version>
+        <guava.version>17.0</guava.version>
         <findbugs.version>2.0.3</findbugs.version>
         <jetbrains-annotations.version>7.0.2</jetbrains-annotations.version>
         <java-image-scaling.version>0.8.4</java-image-scaling.version>
@@ -248,7 +252,7 @@
                 <module>omicron</module>
             </modules>
         </profile>
-    <profile>
+        <profile>
             <id>mod:pirates</id>
             <modules>
                 <module>android-pirates</module>
@@ -334,6 +338,16 @@
             </dependency>
 
             <!-- PARSING -->
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.thrift</groupId>
+                <artifactId>libthrift</artifactId>
+                <version>${thrift.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
@@ -729,6 +743,40 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>com.google.protobuf.tools</groupId>
+                    <artifactId>maven-protoc-plugin</artifactId>
+                    <version>${protobuf-tools.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>compile</goal>
+                                <goal>testCompile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.thrift.tools</groupId>
+                    <artifactId>maven-thrift-plugin</artifactId>
+                    <version>${thrift-tools.version}</version>
+                    <executions>
+                        <execution>
+                            <id>thrift-sources</id>
+                            <phase>generate-sources</phase>
+                            <goals>
+                                <goal>compile</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>thrift-test-sources</id>
+                            <phase>generate-test-sources</phase>
+                            <goals>
+                                <goal>testCompile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>2.8</version>
@@ -800,7 +848,7 @@
                     <version>3.1</version>
 
                     <configuration>
-                        <compilerId>javac-with-errorprone</compilerId>
+                        <!--compilerId>javac-with-errorprone</compilerId-->
                         <forceJavacCompilerUse>true</forceJavacCompilerUse>
 
                         <!--fork>true</fork-->
@@ -816,21 +864,21 @@
                     </configuration>
 
                     <dependencies>
-                        <dependency>
+                        <!--dependency>
                             <groupId>com.google.errorprone</groupId>
                             <artifactId>error_prone_core</artifactId>
-                            <version>1.1.1</version>
-                        </dependency>
+                            <version>1.1.2</version>
+                        </dependency-->
                         <dependency>
                             <groupId>org.codehaus.plexus</groupId>
                             <artifactId>plexus-compiler-javac</artifactId>
                             <version>2.3</version>
                         </dependency>
-                        <dependency>
+                        <!--dependency>
                             <groupId>org.codehaus.plexus</groupId>
                             <artifactId>plexus-compiler-javac-errorprone</artifactId>
                             <version>2.3</version>
-                        </dependency>
+                        </dependency-->
                     </dependencies>
                 </plugin>
                 <plugin>
@@ -1112,6 +1160,10 @@
     </repositories>
 
     <pluginRepositories>
+        <pluginRepository>
+            <id>protoc-plugin</id>
+            <url>http://sergei-ivanov.github.com/maven-protoc-plugin/repo/releases/</url>
+        </pluginRepository>
         <pluginRepository>
             <id>datanucleus</id>
             <url>http://www.datanucleus.org/downloads/maven2</url>

@@ -92,8 +92,9 @@
         <protobuf-tools.version>0.3.2</protobuf-tools.version>
         <thrift.version>0.9.1</thrift.version>
         <thrift-tools.version>0.1.11</thrift-tools.version>
-        <android-maven-plugin.version>3.5.0</android-maven-plugin.version>
-        <android-platform.version>4.1.1.4</android-platform.version>
+        <android-maven-plugin.version>3.9.0-rc.3</android-maven-plugin.version>
+        <android-platform.version>4.4.2_r3</android-platform.version>
+        <butterknife.version>5.1.2</butterknife.version>
         <gson.version>1.7.1</gson.version>
         <guava.version>17.0</guava.version>
         <findbugs.version>2.0.3</findbugs.version>
@@ -298,11 +299,13 @@
                 <groupId>com.google.code.findbugs</groupId>
                 <artifactId>jsr305</artifactId>
                 <version>${findbugs.version}</version>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>com.google.code.findbugs</groupId>
                 <artifactId>annotations</artifactId>
                 <version>${findbugs.version}</version>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.jetbrains</groupId>
@@ -675,10 +678,15 @@
 
             <!-- Android -->
             <dependency>
-                <groupId>com.google.android</groupId>
+                <groupId>android</groupId>
                 <artifactId>android</artifactId>
                 <version>${android-platform.version}</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.jakewharton</groupId>
+                <artifactId>butterknife</artifactId>
+                <version>${butterknife.version}</version>
             </dependency>
 
         </dependencies>
@@ -1006,12 +1014,6 @@
                     <artifactId>android-maven-plugin</artifactId>
                     <version>${android-maven-plugin.version}</version>
                     <extensions>true</extensions>
-
-                    <configuration>
-                        <sdk>
-                            <platform>8</platform>
-                        </sdk>
-                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>

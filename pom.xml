@@ -8,7 +8,7 @@
 
     <groupId>com.lyndir.lhunath</groupId>
     <artifactId>lyndir</artifactId>
-    <version>1.19</version>
+    <version>GIT-SNAPSHOT</version>
     <packaging>pom</packaging>
 
 

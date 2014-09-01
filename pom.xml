@@ -88,6 +88,7 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <buildnumber.version>1.3</buildnumber.version>
         <protobuf.version>2.5.0</protobuf.version>
         <protobuf-tools.version>0.3.2</protobuf-tools.version>
         <thrift.version>0.9.1</thrift.version>
@@ -95,14 +96,14 @@
         <android-maven-plugin.version>3.9.0-rc.3</android-maven-plugin.version>
         <android-platform.version>4.4.2_r3</android-platform.version>
         <butterknife.version>5.1.2</butterknife.version>
-        <gson.version>1.7.1</gson.version>
-        <guava.version>17.0</guava.version>
-        <findbugs.version>2.0.3</findbugs.version>
-        <jetbrains-annotations.version>13</jetbrains-annotations.version>
-        <java-image-scaling.version>0.8.4</java-image-scaling.version>
-        <bouncycastle.version>1.45</bouncycastle.version>
-        <httpclient.version>3.1-rc1</httpclient.version>
-        <jets3t.version>0.7.3</jets3t.version>
+        <gson.version>2.3</gson.version>
+        <guava.version>18.0</guava.version>
+        <findbugs.version>3.0.0</findbugs.version>
+        <jetbrains-annotations.version>13.0</jetbrains-annotations.version>
+        <java-image-scaling.version>0.8.5</java-image-scaling.version>
+        <bouncycastle.version>1.46</bouncycastle.version>
+        <httpclient.version>3.1</httpclient.version>
+        <jets3t.version>0.9.2</jets3t.version>
         <jlibdiff.version>1.01</jlibdiff.version>
         <jtidy.version>r8-20060801</jtidy.version>
         <xom.version>1.2</xom.version>
@@ -121,11 +122,11 @@
         <jetty.version>6.1.4</jetty.version>
         <commons-logging.version>1.1</commons-logging.version>
         <commons-logging-api.version>1.1</commons-logging-api.version>
-        <slf4j.version>1.6.1</slf4j.version>
-        <logback.version>0.9.28</logback.version>
+        <slf4j.version>1.7.7</slf4j.version>
+        <logback.version>1.1.2</logback.version>
         <javaee.version>5.0-1</javaee.version>
         <servlet-api.version>2.4</servlet-api.version>
-        <joda-time.version>1.6</joda-time.version>
+        <joda-time.version>2.4</joda-time.version>
         <json-lib.version>2.2.3</json-lib.version>
         <guice.version>3.0</guice.version>
         <jersey.version>1.17.1</jersey.version>
@@ -137,9 +138,9 @@
         <reflections.version>0.9.9-RC1</reflections.version>
         <maven-jetty-plugin.version>6.1.24</maven-jetty-plugin.version>
 
-        <maven-assembly-plugin.version>2.2-beta-3</maven-assembly-plugin.version>
-        <maven-jar-plugin.version>2.2</maven-jar-plugin.version>
-        <maven-war-plugin.version>2.2</maven-war-plugin.version>
+        <maven-assembly-plugin.version>2.4.1</maven-assembly-plugin.version>
+        <maven-jar-plugin.version>2.5</maven-jar-plugin.version>
+        <maven-war-plugin.version>2.4</maven-war-plugin.version>
         <maven-warpath-plugin.version>2.1.0</maven-warpath-plugin.version>
         <maven-ear-plugin.version>2.3.2</maven-ear-plugin.version>
         <maven-datanucleus-plugin.version>1.1.4</maven-datanucleus-plugin.version>
@@ -574,6 +575,11 @@
                 <version>${slf4j.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-android</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.sun.jersey</groupId>
                 <artifactId>jersey-server</artifactId>
                 <version>${jersey.version}</version>
@@ -751,6 +757,23 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>buildnumber-maven-plugin</artifactId>
+                    <version>${buildnumber.version}</version>
+                    <executions>
+                        <execution>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>create</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <doCheck>false</doCheck>
+                        <doUpdate>false</doUpdate>
+                    </configuration>
+                </plugin>
+                <plugin>
                     <groupId>com.google.protobuf.tools</groupId>
                     <artifactId>maven-protoc-plugin</artifactId>
                     <version>${protobuf-tools.version}</version>
@@ -898,6 +921,13 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>${maven-jar-plugin.version}</version>
+                    <configuration>
+                        <archive>
+                            <manifestEntries>
+                                <Implementation-Version>${buildNumber}</Implementation-Version>
+                            </manifestEntries>
+                        </archive>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>

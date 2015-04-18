@@ -131,7 +131,6 @@
         <json-lib.version>2.2.3</json-lib.version>
         <guice.version>3.0</guice.version>
         <jersey.version>1.17.1</jersey.version>
-        <db4o.version>8.0-SNAPSHOT</db4o.version>
         <neodatis.version>1.9.24.679</neodatis.version>
         <swt.version>3.5.2</swt.version>
         <cglib.version>2.2.2</cglib.version>
@@ -631,31 +630,6 @@
                 <version>1.1.1</version>
             </dependency>
             <dependency>
-                <groupId>com.db4o</groupId>
-                <artifactId>db4o-core-java5</artifactId>
-                <version>${db4o.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.db4o</groupId>
-                <artifactId>db4o-nqopt-java5</artifactId>
-                <version>${db4o.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.db4o</groupId>
-                <artifactId>db4o-taj-java5</artifactId>
-                <version>${db4o.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.db4o</groupId>
-                <artifactId>db4o-tools-java5</artifactId>
-                <version>${db4o.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.db4o</groupId>
-                <artifactId>db4o-instrumentation-java5</artifactId>
-                <version>${db4o.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.neodatis</groupId>
                 <artifactId>neodatis-odb</artifactId>
                 <version>${neodatis.version}</version>
@@ -1152,20 +1126,6 @@
             <id>seasar</id>
             <name>Seasar (For up-to-date GAE artifacts)</name>
             <url>http://maven.seasar.org/maven2</url>
-
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-        </repository>
-        <repository>
-            <id>db4o</id>
-            <name>db4o Repository</name>
-            <url>http://source.db4o.com/maven/</url>
 
             <snapshots>
                 <enabled>true</enabled>

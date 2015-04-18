@@ -8,7 +8,7 @@
 
     <groupId>com.lyndir.lhunath</groupId>
     <artifactId>lyndir</artifactId>
-    <version>GIT-SNAPSHOT</version>
+    <version>1.21</version>
     <packaging>pom</packaging>
 
 
@@ -37,7 +37,8 @@
         <url>${scm.github.webbase}/projects</url>
         <connection>${scm.github.pubbase}/lyndir.git</connection>
         <developerConnection>${scm.github.devbase}/lyndir.git</developerConnection>
-    </scm>
+      <tag>1.21</tag>
+  </scm>
     <issueManagement>
         <system>YouTrack</system>
         <url>https://youtrack.lyndir.com/issues</url>

@@ -1047,10 +1047,12 @@
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </snapshots>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </releases>
         </repository>
         <repository>
@@ -1061,10 +1063,12 @@
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </snapshots>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </releases>
         </repository>
         <repository>
@@ -1075,10 +1079,12 @@
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </snapshots>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </releases>
         </repository>
         <repository>
@@ -1089,10 +1095,12 @@
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </snapshots>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </releases>
         </repository>
         <repository>
@@ -1103,10 +1111,12 @@
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </snapshots>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </releases>
         </repository>
         <repository>
@@ -1116,10 +1126,12 @@
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </snapshots>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </releases>
         </repository>
         <repository>
@@ -1130,10 +1142,12 @@
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </snapshots>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </releases>
         </repository>
         <repository>
@@ -1144,10 +1158,12 @@
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </snapshots>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </releases>
         </repository>
 
@@ -1157,6 +1173,17 @@
         <pluginRepository>
             <id>protoc-plugin</id>
             <url>http://sergei-ivanov.github.com/maven-protoc-plugin/repo/releases/</url>
+
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
         </pluginRepository>
         <pluginRepository>
             <id>datanucleus</id>
@@ -1165,10 +1192,12 @@
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </snapshots>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </releases>
         </pluginRepository>
     </pluginRepositories>

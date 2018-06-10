@@ -98,7 +98,7 @@
         <android-platform.version>4.4.2_r3</android-platform.version>
         <butterknife.version>5.1.2</butterknife.version>
         <gson.version>2.3</gson.version>
-        <guava.version>18.0</guava.version>
+        <guava.version>23.0</guava.version>
         <findbugs.version>3.0.0</findbugs.version>
         <jetbrains-annotations.version>13.0</jetbrains-annotations.version>
         <java-image-scaling.version>0.8.5</java-image-scaling.version>
